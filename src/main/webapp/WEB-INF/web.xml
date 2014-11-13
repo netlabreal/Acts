@@ -5,7 +5,15 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
     <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>login.jsp</welcome-file>
     </welcome-file-list>
+    <filter>
+        <filter-name>L</filter-name>
+        <filter-class>net.lab.filters.LoginF</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>L</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 </web-app>
       
