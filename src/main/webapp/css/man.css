@@ -2,10 +2,10 @@
 
 }
 #content{
-
+  height: 700px;
 }
 .panel-body{
-   // height: 700px;
+
 }
 #footer{
 
@@ -23,8 +23,8 @@ float: right;
     margin-right: 10px;
 }
 #doppanel{
-    width: 80%;
-    margin-left: 10%;
+    width: 100%;
+    margin-left: 0%;
 }
 #content_login{
     width: 50%;
@@ -37,5 +37,22 @@ float: right;
 }
 .form-control{
   margin-bottom: 7px;
+}
+#curs{
+    height: 10px;
+}
+#loadImg{
+    display: none;
+}
+#loadImgModal{
+    display: none;
+}
+#dom,#kw,#org{
+    width: 200px;
+    float: left;
+    margin-right: 30px;
+}
+#data{
+    float: left;
 }
 

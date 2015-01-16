@@ -46,3 +46,52 @@
     </div>
 
 </div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#ssilka').click(function () {
+            if($('#login').val()=="" || $('#password').val()==""){
+                if($('#password').val()==""){$('#password').focus();}
+                if($('#login').val()==""){$('#login').focus();}
+
+                $('.mes').html("");
+                $('.mes').append("Введите корректные данные!!!");
+            }
+            else
+            {
+                var params = 'login=' + encodeURIComponent($('#login').val()) +
+                        '&password=' + encodeURIComponent($('#password').val());
+                $.ajax({
+                    type: "POST",
+                    dataType: "json",
+                    url: "/Acts/login",
+                    data: params,
+                    beforeSend: function(data){
+                        $(".mes").html("Ждите ответа");
+                    },
+                    success: function (data) {
+                        if(data.username=="")
+                        {
+                            $('.mes').html("");
+                            $('.mes').append("Неверное имя пользователя или пароль!!!");
+                            $('#login').val("");
+                            $('#password').val("");
+                            $('#login').focus();
+
+                        }
+                        else{
+                            window.location.replace("/Acts/welcome.jsp");
+                        }
+
+                    },
+                    error: function (result) {
+                        alert("error with server!!!");
+                    }
+                });
+            }
+        });
+
+    });
+</script>
+
+</body>
+</html>
